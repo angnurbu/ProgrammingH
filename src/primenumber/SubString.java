@@ -2,56 +2,59 @@
 
 package primenumber;
 
+import java.util.Scanner;
+
 public class SubString {
 	public static void main(String[] args) {
 
-		String a = " hamro nepal";
-		String b = "a";
-		String c = "t";
-//		String d = findAlternateSubString(a, b, c);
-
-		System.out.println(a.substring(0));
-		int x = 2;
+		System.out.println("Enter the string: ");
+		Scanner s1 = new Scanner(System.in);
+		String str1 = s1.nextLine();   
 		
-		String change = String.valueOf(x);
-		System.out.println(change);
+		 
+		System.out.println("Enter the string to be replaced: ");
+		Scanner s2 = new Scanner(System.in);
+		String stringToReplace = s2.nextLine();
+	
 		
-	}
-}
-/*		
-//		System.out.println(d);
-}
-
-
-	public static String findSubString(String pOriginalString, String pFindString, String pReplaceString){
+		System.out.println("Enter the Replacement string : ");
+		Scanner s3 = new Scanner(System.in);
+		String replaceString = s3.nextLine();   
 		
-		return pOriginalString.replace(pFindString,  pReplaceString);
+		
+		System.out.println(replaceStringwithnewone(str1, stringToReplace, replaceString));
+		
 		
 	}
-
-	public static String findAlternateSubString(String pOriginalString, String pFindString, String pReplaceString){
+	
+	public static String replaceStringwithnewone(String aString1, String aString2, String aString3){
 		
-		int index = pOriginalString.indexOf(pFindString);
-		System.out.println(index);
-		String beforeWord =  pOriginalString.substring(0,index);
-		System.out.println(beforeWord);
-		String afterWord = pOriginalString.substring(index+pFindString.length());		
-	    System.out.println(afterWord);
-		return beforeWord + pReplaceString + afterWord;
 		
-	}
-
-    
-}
+		int indexOfStates = aString1.indexOf(aString2);
+		 
+		 int lengthOfString = aString2.length();
+		 String beforeString = aString1.substring(0, indexOfStates);
+		 
+		 String middleString = beforeString + aString3; 
+		 int totalLength = aString1.length();
+		 
+		 int indexOfBeginningOfEndString = indexOfStates + lengthOfString;
+		 String endPart = aString1.substring(indexOfBeginningOfEndString, totalLength);
+		 
+		 String finalString = middleString + endPart;
+		 
+		 return finalString;
+	
+	}		 
+		 
+		 
+		
+		
+		
+}		
+		
+		
 		
 	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-*/
+	
